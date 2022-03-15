@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NearByTransfer</string>
+    <string name="load_image">Load Image</string>
+    <string name="send">Send</string>
+    <string name="no_nearby_devices">No nearby devices</string>
+    <string name="mine">Mine</string>
+    <string name="received">Received</string>
+</resources>

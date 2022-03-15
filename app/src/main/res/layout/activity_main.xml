@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/connectors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        app:spanCount="3"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/no_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/no_nearby_devices"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        tools:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/mine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/mine"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/connectors"
+        app:layout_constraintStart_toStartOf="@id/my_image"
+        app:layout_constraintEnd_toEndOf="@id/my_image"/>
+
+    <TextView
+        android:id="@+id/received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/received"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/connectors"
+        app:layout_constraintStart_toStartOf="@id/received_image"
+        app:layout_constraintEnd_toEndOf="@id/received_image"/>
+
+    <ImageView
+        android:id="@+id/my_image"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintWidth_percent=".4"
+        app:layout_constraintTop_toBottomOf="@id/mine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/received_image"/>
+
+    <ImageView
+        android:id="@+id/received_image"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintWidth_percent=".4"
+        app:layout_constraintTop_toTopOf="@id/my_image"
+        app:layout_constraintStart_toEndOf="@id/my_image"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar_mine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/ProgressBarTheme"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/my_image"
+        app:layout_constraintStart_toStartOf="@id/my_image"
+        app:layout_constraintBottom_toBottomOf="@id/my_image"
+        app:layout_constraintEnd_toEndOf="@id/my_image"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/ProgressBarTheme"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/received_image"
+        app:layout_constraintStart_toStartOf="@id/received_image"
+        app:layout_constraintBottom_toBottomOf="@id/received_image"
+        app:layout_constraintEnd_toEndOf="@id/received_image"/>
+
+    <Button
+        android:id="@+id/load_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/load_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/send"
+        app:layout_constraintTop_toBottomOf="@id/my_image"/>
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        app:layout_constraintStart_toEndOf="@id/load_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/load_image"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
